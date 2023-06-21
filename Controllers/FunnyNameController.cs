@@ -46,11 +46,14 @@ namespace APIcrudStubExample.Controllers
 
         private string[] RandomNames(Random givenRnd, int givenCntToProvide)
         {
+            int throttle = 1000; //to keep someone from putting some stupid large number and blowing up my demo server
+            //todo: in the spirit - I should put some throttling on cookies/ip's - if someone goes gonzo for whatever reason after X hits my server shouldn't get hammered - just lock them out for an hour...
             var result = new List<string>();
-            for (int iterator = 0; iterator < Math.Min(1000, givenCntToProvide); iterator++)
+            for (int iterator = 0; iterator < Math.Min(throttle, givenCntToProvide); iterator++)
             {
                 var ThisRandom = RandomName(givenRnd);
-                if (result.FindIndex(x => x == ThisRandom) < 0) { result.Add(ThisRandom); }
+                if (result.FindIndex(x => x == ThisRandom) < 0) { result.Add(ThisRandom); } 
+                // note this little chunk of code makes it possible that the function will NOT return the number of random names requested.  In an API running in the real world - this could be a problem and likely coded differently...
             }
             return result.ToArray();
         }
