@@ -8,3 +8,10 @@ Steps:
 6. Refreshments.
 
 This is older MS tech (.NET 4.7) - but in this case I wanted an example for situations where .net Core was not practical. 
+
+To see this implemented go:
+https://northberry.net/APIcrudStubExample/FunnyName/GimmeAWholeBunchOfFunnyNames
+
+or to swagger UI for more options
+https://northberry.net/APIcrudStubExample/swagger/ui/index
+ 

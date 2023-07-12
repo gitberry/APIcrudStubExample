@@ -29,7 +29,7 @@ namespace APIcrudStubExample.Areas.HelpPage
             MessageId = "APIcrudStubExample.Areas.HelpPage.TextSample.#ctor(System.String)",
             Justification = "End users may choose to merge this string with existing localized resources.")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly",
-            MessageId = "bsonspec",
+            MessageId = "jsonspec",
             Justification = "Part of a URI.")]
         public static void Register(HttpConfiguration config)
         {
@@ -54,10 +54,10 @@ namespace APIcrudStubExample.Areas.HelpPage
 
             // Extend the following to use a preset object directly as the sample for all actions that support a media
             // type, regardless of the body parameter or return type. The lines below avoid display of binary content.
-            // The BsonMediaTypeFormatter (if available) is not used to serialize the TextSample object.
+            // The JsonMediaTypeFormatter (if available) is not used to serialize the TextSample object.
             config.SetSampleForMediaType(
-                new TextSample("Binary JSON content. See http://bsonspec.org for details."),
-                new MediaTypeHeaderValue("application/bson"));
+                new TextSample("Binary JSON content. See http://jsonspec.org for details."),
+                new MediaTypeHeaderValue("application/json"));
 
             //// Uncomment the following to use "[0]=foo&[1]=bar" directly as the sample for all actions that support form URL encoded format
             //// and have IEnumerable<string> as the body parameter or return type.
